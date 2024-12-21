@@ -18,7 +18,7 @@ export default function Page() {
         </ClerkLoading>
       </section>
       <section className="max-lg:hidden full-screen grid place-items-center  bg-gr-main-1">
-        <Image src={"/logo.webp"} alt="Logo" width={120} height={120} />
+        <Image src="/logo.webp" alt="Logo" width={120} height={120} />
       </section>
     </main>
   );
