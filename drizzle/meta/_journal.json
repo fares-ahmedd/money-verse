@@ -1,0 +1,20 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1734839061357,
+      "tag": "0000_nosy_wendigo",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1734899615032,
+      "tag": "0001_last_morgan_stark",
+      "breakpoints": true
+    }
+  ]
+}
