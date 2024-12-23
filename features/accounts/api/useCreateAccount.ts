@@ -16,11 +16,17 @@ export const useCreateAccount = () => {
     },
     onSuccess: () => {
       toast({
-        title: "Account created!",
-        description: "Your account have been created Successfully",
+        title: " ✅ Account created",
       });
       queryClient.invalidateQueries({ queryKey: ["accounts"] });
     },
-    onError: () => {},
+    onError: () => {
+      toast({
+        title: " ❌ Failed to create account",
+        variant: "destructive",
+      });
+    },
   });
+
+  return mutation;
 };

@@ -7,6 +7,7 @@ import { useMedia } from "react-use";
 import { useState } from "react";
 import { Button } from "./ui/button";
 import { MenuIcon } from "lucide-react";
+import HeaderLogo from "./HeaderLogo";
 
 const routes = [
   { href: "/", label: "Overview" },
@@ -39,6 +40,9 @@ function Navigation() {
           </Button>
         </SheetTrigger>
         <SheetContent side={"left"} className="px-2">
+          <div className="mx-4 w-fit">
+            <HeaderLogo open />
+          </div>
           <nav className="flex flex-col gap-y-2 pt-6">
             {routes.map((route) => (
               <Button
