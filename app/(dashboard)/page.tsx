@@ -1,7 +1,14 @@
 "use client";
-import { useGetAccounts } from "@/features/accounts/api/use-get-accounts";
-import { UserButton } from "@clerk/nextjs";
+
+import { Button } from "@/components/ui/button";
+import { useNewAccount } from "@/features/accounts/hooks/useNewAccount";
 
 export default function Home() {
-  return <div>Home Page</div>;
+  const { onOpen } = useNewAccount();
+
+  return (
+    <div>
+      <Button onClick={onOpen}>Add An Account</Button>
+    </div>
+  );
 }

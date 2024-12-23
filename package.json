@@ -16,9 +16,13 @@
     "@clerk/nextjs": "^6.9.6",
     "@hono/clerk-auth": "^2.0.0",
     "@hono/zod-validator": "^0.4.2",
+    "@hookform/resolvers": "^3.9.1",
     "@neondatabase/serverless": "^0.9.1",
+    "@paralleldrive/cuid2": "^2.2.2",
     "@radix-ui/react-dialog": "^1.1.4",
+    "@radix-ui/react-label": "^2.1.1",
     "@radix-ui/react-slot": "^1.1.1",
+    "@radix-ui/react-toast": "^1.2.4",
     "@tanstack/react-query": "^5.62.8",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -29,11 +33,13 @@
     "next": "14.2.20",
     "react": "^18",
     "react-dom": "^18",
+    "react-hook-form": "^7.54.2",
     "react-use": "^17.6.0",
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7",
     "tsx": "^4.19.2",
-    "zod": "^3.24.1"
+    "zod": "^3.24.1",
+    "zustand": "^5.0.2"
   },
   "devDependencies": {
     "@types/node": "^20",
