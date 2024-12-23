@@ -1,4 +1,4 @@
-import Header from "@/components/ui/Header";
+import Header from "@/components/Header";
 
 function DashboardLayout({ children }: { children: React.ReactNode }) {
   return (

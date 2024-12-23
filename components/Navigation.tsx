@@ -2,10 +2,10 @@
 
 import { usePathname, useRouter } from "next/navigation";
 import NavButton from "./NavButton";
-import { Sheet, SheetContent, SheetTrigger } from "./sheet";
+import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import { useMedia } from "react-use";
 import { useState } from "react";
-import { Button } from "./button";
+import { Button } from "./ui/button";
 import { MenuIcon } from "lucide-react";
 
 const routes = [
@@ -25,8 +25,6 @@ function Navigation() {
     router.push(href);
     setIsOpen(false);
   };
-
-  console.log(isMobile);
 
   if (isMobile) {
     return (

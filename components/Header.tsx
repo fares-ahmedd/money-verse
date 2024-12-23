@@ -1,6 +1,6 @@
-import { UserButton, ClerkLoading, ClerkLoaded } from "@clerk/nextjs";
 import HeaderLogo from "./HeaderLogo";
 import Navigation from "./Navigation";
+import UserSettings from "./UserSettings";
 import WelcomeMsg from "./WelcomeMsg";
 function Header() {
   return (
@@ -11,19 +11,7 @@ function Header() {
             <HeaderLogo />
             <Navigation />
           </div>
-          <ClerkLoaded>
-            <UserButton
-              afterSwitchSessionUrl="/"
-              appearance={{
-                elements: {
-                  avatarBox: "size-12 border-2 border-white  ", // Styles the avatar (image container)
-                },
-              }}
-            />
-          </ClerkLoaded>
-          <ClerkLoading>
-            <div className="size-12 rounded-full bg-gr-main-2 shadow-lg animate-pulse " />
-          </ClerkLoading>
+          <UserSettings />
         </div>
         <WelcomeMsg />
       </div>
