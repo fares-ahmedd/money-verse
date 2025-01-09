@@ -30,7 +30,7 @@ function Navigation() {
   if (isMobile) {
     return (
       <Sheet open={isOpen} onOpenChange={setIsOpen}>
-        <SheetTrigger>
+        <SheetTrigger asChild>
           <Button
             value={"outline"}
             size={"sm"}
