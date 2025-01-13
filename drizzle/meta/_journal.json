@@ -15,6 +15,13 @@
       "when": 1734899615032,
       "tag": "0001_last_morgan_stark",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1736731558187,
+      "tag": "0002_free_risque",
+      "breakpoints": true
     }
   ]
 }

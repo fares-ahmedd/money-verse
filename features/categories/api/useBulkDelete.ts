@@ -4,39 +4,32 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { InferRequestType, InferResponseType } from "hono";
 
 type ResponseType = InferResponseType<
-  (typeof client.api.accounts)[":id"]["$patch"]
+  (typeof client.api.accounts)["bulk-delete"]["$post"]
 >;
 type RequestType = InferRequestType<
-  (typeof client.api.accounts)[":id"]["$patch"]
+  (typeof client.api.accounts)["bulk-delete"]["$post"]
 >["json"];
 
-export const useEditAccount = (id?: string) => {
+export const useBulkDelete = () => {
   const queryClient = useQueryClient();
   const mutation = useMutation<ResponseType, Error, RequestType>({
     mutationFn: async (json) => {
-      const response = await client.api.accounts[":id"]["$patch"]({
+      const response = await client.api.accounts["bulk-delete"]["$post"]({
         json,
-        param: { id },
       });
 
-      if (!response.ok) {
-        const errorData = (await response.json()) as { error: string };
-        throw new Error(errorData.error || "Failed to edit account");
-      }
       return await response.json();
     },
     onSuccess: () => {
       toast({
-        title: " ✅ Account updated",
+        title: "Accounts deleted",
       });
-      queryClient.invalidateQueries({ queryKey: ["account", { id }] });
       queryClient.invalidateQueries({ queryKey: ["accounts"] });
-
-      // TODO: Invalidate summery and transactions
+      // TODO: Invalidate Summery
     },
-    onError: (error) => {
+    onError: () => {
       toast({
-        title: `${error.message}`,
+        title: "❌ Failed to delete accounts",
         variant: "destructive",
       });
     },
