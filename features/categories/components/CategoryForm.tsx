@@ -27,7 +27,7 @@ type Props = {
   disabled?: boolean;
 };
 
-function AccountForm({
+function CategoryForm({
   onSubmit,
   defaultValues,
   disabled,
@@ -61,7 +61,7 @@ function AccountForm({
               <FormControl>
                 <Input
                   disabled={disabled}
-                  placeholder="e.g. Cash, Bank, Credit Card"
+                  placeholder="Category name"
                   {...field}
                 />
               </FormControl>
@@ -69,7 +69,7 @@ function AccountForm({
           )}
         />
         <Button className="w-full" disabled={disabled}>
-          {id ? "Save changes" : "Create account"}
+          {id ? "Save changes" : "Create category"}
         </Button>
         {!!id && (
           <Button
@@ -79,7 +79,7 @@ function AccountForm({
             className="w-full"
             variant={"outline"}
           >
-            <Trash /> Delete account
+            <Trash /> Delete category
           </Button>
         )}
       </form>
@@ -87,4 +87,4 @@ function AccountForm({
   );
 }
 
-export default AccountForm;
+export default CategoryForm;

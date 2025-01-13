@@ -5,46 +5,47 @@ import {
   SheetHeader,
   SheetTitle,
 } from "@/components/ui/sheet";
-import AccountForm from "./AccountForm";
-import { insertAccountSchema } from "@/db/schema";
+import { insertCategorySchema } from "@/db/schema";
 import { z } from "zod";
-import { useOpenAccount } from "@/features/accounts/hooks/useOpenAccount";
-import { useGetAccount } from "../api/useGetAccount";
 import { Loader2 } from "lucide-react";
-import { useEditAccount } from "../api/useEditAccount";
-import { useDeleteAccount } from "../api/useDeleteAccount";
+
 import useConfirm from "@/hooks/useConfirm";
+import { useOpenCategory } from "../hooks/useOpenCategory";
+import { useGetCategory } from "../api/useGetCategory";
+import { useEditCategory } from "../api/useEditCategory";
+import { useDeleteCategory } from "../api/useDeleteCategory";
+import CategoryForm from "./CategoryForm";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const formSchema = insertAccountSchema.pick({
+const formSchema = insertCategorySchema.pick({
   name: true,
 });
 
 export type FormValues = z.input<typeof formSchema>;
 
-function EditAccountSheet() {
-  const { isOpen, onClose, id } = useOpenAccount();
+function EditCategorySheet() {
+  const { isOpen, onClose, id } = useOpenCategory();
   const [ConfirmationDialog, confirm] = useConfirm(
     "Are you sure",
-    "You are about to delete this account"
+    "You are about to delete this category"
   );
-  const { data: account, isLoading: isLoadingAccount } = useGetAccount(id);
-  const { mutate: editAccount, isPending: isEditing } = useEditAccount(id);
-  const { mutate: deleteAccount, isPaused: isDeleting } = useDeleteAccount(id);
-  const defaultValues = account
+  const { data: category, isLoading: isLoadingAccount } = useGetCategory(id);
+  const { mutate: editCategory, isPending: isEditing } = useEditCategory(id);
+  const { mutate: deleteAccount, isPaused: isDeleting } = useDeleteCategory(id);
+  const defaultValues = category
     ? {
-        name: account.name,
+        name: category.name,
       }
     : { name: "" };
   const onSubmit = (values: FormValues) => {
     if (!values?.name?.trim()) return;
-    editAccount(values, {
+    editCategory(values, {
       onSuccess: () => {
         onClose();
       },
     });
   };
 
-  const handleDeleteAccount = async () => {
+  const handelDeleteCategory = async () => {
     const ok = await confirm();
     if (ok) {
       deleteAccount(undefined, {
@@ -60,19 +61,19 @@ function EditAccountSheet() {
       <Sheet open={isOpen} onOpenChange={onClose}>
         <SheetContent className="space-y-4">
           <SheetHeader>
-            <SheetTitle>Edit Account</SheetTitle>
-            <SheetDescription>Edit your account</SheetDescription>
+            <SheetTitle>Edit category</SheetTitle>
+            <SheetDescription>Edit your category</SheetDescription>
           </SheetHeader>
           {isLoadingAccount ? (
             <div className="absolute inset-0 flex items-center justify-center">
               <Loader2 className="animate-spin size-4 text-muted-foreground" />
             </div>
           ) : (
-            <AccountForm
+            <CategoryForm
               defaultValues={defaultValues}
               disabled={isEditing || isDeleting}
               onSubmit={onSubmit}
-              onDelete={handleDeleteAccount}
+              onDelete={handelDeleteCategory}
               id={id}
             />
           )}
@@ -82,4 +83,4 @@ function EditAccountSheet() {
   );
 }
 
-export default EditAccountSheet;
+export default EditCategorySheet;

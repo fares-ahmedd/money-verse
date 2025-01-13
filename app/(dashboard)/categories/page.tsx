@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import AccountsTable from "@/features/accounts/components/AccountsTable";
-import CreateAccountBtn from "@/features/accounts/components/CreateAccountBtn";
+import CategoriesTable from "@/features/categories/components/CategoriesTable";
+import CreateCategoryBtn from "@/features/categories/components/CreateCategoryBtn";
 
 function CategoriesPage() {
   return (
@@ -10,10 +10,10 @@ function CategoriesPage() {
           <CardTitle className="text-xl line-clamp-1">
             Categories page
           </CardTitle>
-          <CreateAccountBtn />
+          <CreateCategoryBtn />
         </CardHeader>
         <CardContent>
-          <AccountsTable />
+          <CategoriesTable />
         </CardContent>
       </Card>
     </div>

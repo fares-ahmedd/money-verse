@@ -1,7 +1,7 @@
 import { Loader2 } from "lucide-react";
 import React from "react";
 
-function AccountTableSkeleton() {
+function CategoryTableSkeleton() {
   return (
     <div className="py-4 space-y-2">
       <div
@@ -21,4 +21,4 @@ function AccountTableSkeleton() {
   );
 }
 
-export default AccountTableSkeleton;
+export default CategoryTableSkeleton;

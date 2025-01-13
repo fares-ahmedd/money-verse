@@ -4,33 +4,33 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { InferRequestType, InferResponseType } from "hono";
 
 type ResponseType = InferResponseType<
-  (typeof client.api.accounts)[":id"]["$patch"]
+  (typeof client.api.categories)[":id"]["$patch"]
 >;
 type RequestType = InferRequestType<
-  (typeof client.api.accounts)[":id"]["$patch"]
+  (typeof client.api.categories)[":id"]["$patch"]
 >["json"];
 
-export const useEditAccount = (id?: string) => {
+export const useEditCategory = (id?: string) => {
   const queryClient = useQueryClient();
   const mutation = useMutation<ResponseType, Error, RequestType>({
     mutationFn: async (json) => {
-      const response = await client.api.accounts[":id"]["$patch"]({
+      const response = await client.api.categories[":id"]["$patch"]({
         json,
         param: { id },
       });
 
       if (!response.ok) {
         const errorData = (await response.json()) as { error: string };
-        throw new Error(errorData.error || "Failed to edit account");
+        throw new Error(errorData.error || "Failed to edit category");
       }
       return await response.json();
     },
     onSuccess: () => {
       toast({
-        title: " ✅ Account updated",
+        title: " ✅ Category updated",
       });
-      queryClient.invalidateQueries({ queryKey: ["account", { id }] });
-      queryClient.invalidateQueries({ queryKey: ["accounts"] });
+      queryClient.invalidateQueries({ queryKey: ["category", { id }] });
+      queryClient.invalidateQueries({ queryKey: ["categories"] });
 
       // TODO: Invalidate summery and transactions
     },

@@ -4,14 +4,14 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { InferResponseType } from "hono";
 
 type ResponseType = InferResponseType<
-  (typeof client.api.accounts)[":id"]["$delete"]
+  (typeof client.api.categories)[":id"]["$delete"]
 >;
 
-export const useDeleteAccount = (id?: string) => {
+export const useDeleteCategory = (id?: string) => {
   const queryClient = useQueryClient();
   const mutation = useMutation<ResponseType, Error>({
     mutationFn: async () => {
-      const response = await client.api.accounts[":id"]["$delete"]({
+      const response = await client.api.categories[":id"]["$delete"]({
         param: { id },
       });
 
@@ -19,16 +19,16 @@ export const useDeleteAccount = (id?: string) => {
     },
     onSuccess: () => {
       toast({
-        title: "Account deleted",
+        title: "Category deleted",
       });
-      queryClient.invalidateQueries({ queryKey: ["account", { id }] });
-      queryClient.invalidateQueries({ queryKey: ["accounts"] });
+      queryClient.invalidateQueries({ queryKey: ["category", { id }] });
+      queryClient.invalidateQueries({ queryKey: ["categories"] });
 
       // TODO: Invalidate summery and transactions
     },
     onError: () => {
       toast({
-        title: " ❌ Failed to delete account",
+        title: " ❌ Failed to delete category",
         variant: "destructive",
       });
     },

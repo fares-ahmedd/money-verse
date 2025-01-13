@@ -1,18 +1,18 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { useNewAccount } from "../hooks/useNewCategory";
 import { Plus } from "lucide-react";
+import { useNewCategory } from "../hooks/useNewCategory";
 
-function CreateAccountBtn() {
-  const { onOpen } = useNewAccount();
+function CreateCategoryBtn() {
+  const { onOpen } = useNewCategory();
 
   return (
     <Button size={"sm"} onClick={onOpen}>
       <Plus />
-      Add new account
+      Add new category
     </Button>
   );
 }
 
-export default CreateAccountBtn;
+export default CreateCategoryBtn;

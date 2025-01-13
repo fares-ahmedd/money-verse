@@ -5,21 +5,21 @@ import {
   SheetHeader,
   SheetTitle,
 } from "@/components/ui/sheet";
-import { useNewAccount } from "../hooks/useNewCategory";
-import AccountForm from "./AccountForm";
-import { insertAccountSchema } from "@/db/schema";
+import { insertCategorySchema } from "@/db/schema";
 import { z } from "zod";
-import { useCreateAccount } from "../api/useCreateAccount";
+import { useCreateCategory } from "../api/useCreateCategory";
+import { useNewCategory } from "../hooks/useNewCategory";
+import CategoryForm from "./CategoryForm";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const formSchema = insertAccountSchema.pick({
+const formSchema = insertCategorySchema.pick({
   name: true,
 });
 
 export type FormValues = z.input<typeof formSchema>;
 
-function NewAccountSheet() {
-  const { isOpen, onClose } = useNewAccount();
-  const { mutate, isPending: isCreating } = useCreateAccount();
+function NewCategorySheet() {
+  const { isOpen, onClose } = useNewCategory();
+  const { mutate, isPending: isCreating } = useCreateCategory();
   const onSubmit = (values: FormValues) => {
     if (!values.name.trim()) return;
     mutate(values, {
@@ -32,12 +32,12 @@ function NewAccountSheet() {
     <Sheet open={isOpen} onOpenChange={onClose}>
       <SheetContent className="space-y-4">
         <SheetHeader>
-          <SheetTitle>New Account</SheetTitle>
+          <SheetTitle>New category</SheetTitle>
           <SheetDescription>
-            Create a new account to track your transactions
+            Create a new category to organize your transactions
           </SheetDescription>
         </SheetHeader>
-        <AccountForm
+        <CategoryForm
           defaultValues={{ name: "" }}
           disabled={isCreating}
           onSubmit={onSubmit}
@@ -47,4 +47,4 @@ function NewAccountSheet() {
   );
 }
 
-export default NewAccountSheet;
+export default NewCategorySheet;

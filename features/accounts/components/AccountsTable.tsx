@@ -3,7 +3,7 @@ import { DataTable } from "@/components/DataTable";
 import { useGetAccounts } from "../api/useGetAccounts";
 import { columns } from "@/app/(dashboard)/accounts/columns";
 import AccountTableSkeleton from "./AccountTableSkeleton";
-import { useBulkDelete } from "../api/useBulkDelete";
+import { useBulkDelete } from "../api/useBulkDeleteAccounts";
 
 function AccountsTable() {
   const { isLoading, data } = useGetAccounts();
@@ -31,8 +31,3 @@ function AccountsTable() {
 }
 
 export default AccountsTable;
-
-// row: Row<{
-//   id: string;
-//   name: string;
-// }>[]

@@ -4,17 +4,17 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { InferRequestType, InferResponseType } from "hono";
 
 type ResponseType = InferResponseType<
-  (typeof client.api.accounts)["bulk-delete"]["$post"]
+  (typeof client.api.categories)["bulk-delete"]["$post"]
 >;
 type RequestType = InferRequestType<
-  (typeof client.api.accounts)["bulk-delete"]["$post"]
+  (typeof client.api.categories)["bulk-delete"]["$post"]
 >["json"];
 
-export const useBulkDelete = () => {
+export const useBulkDeleteCategories = () => {
   const queryClient = useQueryClient();
   const mutation = useMutation<ResponseType, Error, RequestType>({
     mutationFn: async (json) => {
-      const response = await client.api.accounts["bulk-delete"]["$post"]({
+      const response = await client.api.categories["bulk-delete"]["$post"]({
         json,
       });
 
@@ -22,14 +22,14 @@ export const useBulkDelete = () => {
     },
     onSuccess: () => {
       toast({
-        title: "Accounts deleted",
+        title: "Categories deleted",
       });
-      queryClient.invalidateQueries({ queryKey: ["accounts"] });
+      queryClient.invalidateQueries({ queryKey: ["categories"] });
       // TODO: Invalidate Summery
     },
     onError: () => {
       toast({
-        title: "❌ Failed to delete accounts",
+        title: "❌ Failed to delete categories",
         variant: "destructive",
       });
     },
