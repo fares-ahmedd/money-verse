@@ -1,9 +1,9 @@
 "use client";
 import { DataTable } from "@/components/DataTable";
-import { columns } from "@/app/(dashboard)/accounts/columns";
 import { useBulkDeleteCategories } from "../api/useBulkDeleteCategories";
 import { useGetCategories } from "../api/useGetCategories";
 import CategoryTableSkeleton from "./CategoryTableSkeleton";
+import { columns } from "@/app/(dashboard)/categories/columns";
 
 function CategoriesTable() {
   const { isLoading, data } = useGetCategories();
