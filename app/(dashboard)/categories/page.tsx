@@ -2,6 +2,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import CategoriesTable from "@/features/categories/components/CategoriesTable";
 import CreateCategoryBtn from "@/features/categories/components/CreateCategoryBtn";
 
+export const metadata = {
+  title: "Categories page",
+};
+
 function CategoriesPage() {
   return (
     <div className="max-w-screen-2xl mx-auto pb-10 -mt-24">

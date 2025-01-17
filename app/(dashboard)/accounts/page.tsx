@@ -2,6 +2,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import AccountsTable from "@/features/accounts/components/AccountsTable";
 import CreateAccountBtn from "@/features/accounts/components/CreateAccountBtn";
 
+export const metadata = {
+  title: "Accounts page",
+};
+
 function AccountsPage() {
   return (
     <div className="max-w-screen-2xl mx-auto pb-10 -mt-24">

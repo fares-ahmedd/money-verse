@@ -28,9 +28,10 @@ function EditCategorySheet() {
     "Are you sure",
     "You are about to delete this category"
   );
-  const { data: category, isLoading: isLoadingAccount } = useGetCategory(id);
+  const { data: category, isLoading: isLoadingCategory } = useGetCategory(id);
   const { mutate: editCategory, isPending: isEditing } = useEditCategory(id);
-  const { mutate: deleteAccount, isPaused: isDeleting } = useDeleteCategory(id);
+  const { mutate: deleteCategory, isPaused: isDeleting } =
+    useDeleteCategory(id);
   const defaultValues = category
     ? {
         name: category.name,
@@ -48,7 +49,7 @@ function EditCategorySheet() {
   const handelDeleteCategory = async () => {
     const ok = await confirm();
     if (ok) {
-      deleteAccount(undefined, {
+      deleteCategory(undefined, {
         onSuccess: () => {
           onClose();
         },
@@ -64,7 +65,7 @@ function EditCategorySheet() {
             <SheetTitle>Edit category</SheetTitle>
             <SheetDescription>Edit your category</SheetDescription>
           </SheetHeader>
-          {isLoadingAccount ? (
+          {isLoadingCategory ? (
             <div className="absolute inset-0 flex items-center justify-center">
               <Loader2 className="animate-spin size-4 text-muted-foreground" />
             </div>

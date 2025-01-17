@@ -5,7 +5,7 @@ function AccountTableSkeleton() {
   return (
     <div className="py-4 space-y-2">
       <div
-        className="skeleton rounded-lg animate-pulse "
+        className="skeleton "
         style={{ height: "30px", maxWidth: "384px" }}
       ></div>
       <div

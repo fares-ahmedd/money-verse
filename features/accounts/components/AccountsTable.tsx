@@ -3,11 +3,11 @@ import { DataTable } from "@/components/DataTable";
 import { useGetAccounts } from "../api/useGetAccounts";
 import { columns } from "@/app/(dashboard)/accounts/columns";
 import AccountTableSkeleton from "./AccountTableSkeleton";
-import { useBulkDelete } from "../api/useBulkDeleteAccounts";
+import { useBulkDeleteAccounts } from "../api/useBulkDeleteAccounts";
 
 function AccountsTable() {
   const { isLoading, data } = useGetAccounts();
-  const { isPending, mutate: deleteAccounts } = useBulkDelete();
+  const { isPending, mutate: deleteAccounts } = useBulkDeleteAccounts();
   const accounts = data || [];
 
   const isDisabled = isLoading || isPending;

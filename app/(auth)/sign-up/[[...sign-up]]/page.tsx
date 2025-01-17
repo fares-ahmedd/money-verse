@@ -1,6 +1,10 @@
 import { SignUp, ClerkLoaded, ClerkLoading } from "@clerk/nextjs";
 import { Loader2 } from "lucide-react";
 import Image from "next/image";
+
+export const metadata = {
+  title: "Sign Up",
+};
 export default function Page() {
   return (
     <main className="full-screen grid grid-cols-1 lg:grid-cols-2">
