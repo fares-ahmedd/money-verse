@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import TransactionsTable from "@/features/accounts/components/AccountsTable";
 import CreateTransactionBtn from "@/features/transactions/components/CreateTrasnactionsBtn";
+import TransactionsTable from "@/features/transactions/components/TransactionsTable";
 
 export const metadata = {
   title: "Accounts page",

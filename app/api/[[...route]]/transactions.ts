@@ -26,13 +26,14 @@ const app = new Hono()
     clerkMiddleware(),
     async (c) => {
       const auth = getAuth(c);
+      if (!auth?.userId) {
+        return c.json({ error: "unauthorized" }, 401);
+      }
       const { accountId, from, to } = c.req.valid("query");
 
       const defaultTo = new Date();
       const defaultFrom = subDays(defaultTo, 30);
-      if (!auth?.userId) {
-        return c.json({ error: "unauthorized" }, 401);
-      }
+
       const startDate = from
         ? parse(from, "yyy-MM-dd", new Date())
         : defaultFrom;
@@ -43,12 +44,12 @@ const app = new Hono()
           id: transactions.id,
           date: transactions.date,
           category: categories.name,
-          categoryId: categories.id,
+          categoryId: transactions.categoryId,
           payee: transactions.payee,
           amount: transactions.amount,
           notes: transactions.notes,
           account: accounts.name,
-          accountId: accounts.id,
+          accountId: transactions.accountId,
         })
         .from(transactions)
         .innerJoin(accounts, eq(transactions.accountId, accounts.id))
