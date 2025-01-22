@@ -16,7 +16,6 @@ function CategoriesTable() {
     return <CategoryTableSkeleton />;
   }
 
-  console.log("Render");
   return (
     <DataTable
       filterKey="name"

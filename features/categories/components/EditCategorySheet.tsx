@@ -30,7 +30,7 @@ function EditCategorySheet() {
   );
   const { data: category, isLoading: isLoadingCategory } = useGetCategory(id);
   const { mutate: editCategory, isPending: isEditing } = useEditCategory(id);
-  const { mutate: deleteCategory, isPaused: isDeleting } =
+  const { mutate: deleteCategory, isPending: isDeleting } =
     useDeleteCategory(id);
   const defaultValues = category
     ? {

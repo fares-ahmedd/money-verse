@@ -5,7 +5,6 @@ import {
   SheetHeader,
   SheetTitle,
 } from "@/components/ui/sheet";
-import AccountForm from "./AccountForm";
 import { insertAccountSchema } from "@/db/schema";
 import { z } from "zod";
 import { useOpenAccount } from "@/features/accounts/hooks/useOpenAccount";
@@ -14,6 +13,7 @@ import { Loader2 } from "lucide-react";
 import { useEditAccount } from "../api/useEditAccount";
 import { useDeleteAccount } from "../api/useDeleteAccount";
 import useConfirm from "@/hooks/useConfirm";
+import AccountForm from "./AccountForm";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const formSchema = insertAccountSchema.pick({
   name: true,
@@ -29,7 +29,7 @@ function EditAccountSheet() {
   );
   const { data: account, isLoading: isLoadingAccount } = useGetAccount(id);
   const { mutate: editAccount, isPending: isEditing } = useEditAccount(id);
-  const { mutate: deleteAccount, isPaused: isDeleting } = useDeleteAccount(id);
+  const { mutate: deleteAccount, isPending: isDeleting } = useDeleteAccount(id);
   const defaultValues = account
     ? {
         name: account.name,

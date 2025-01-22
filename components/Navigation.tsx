@@ -41,7 +41,7 @@ function Navigation() {
         </SheetTrigger>
         <SheetContent side={"left"} className="px-2">
           <div className="mx-4 w-fit">
-            <HeaderLogo open />
+            <HeaderLogo isMenu />
           </div>
           <nav className="flex flex-col gap-y-2 pt-6">
             {routes.map((route) => (

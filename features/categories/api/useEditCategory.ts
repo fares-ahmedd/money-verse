@@ -31,6 +31,7 @@ export const useEditCategory = (id?: string) => {
       });
       queryClient.invalidateQueries({ queryKey: ["category", { id }] });
       queryClient.invalidateQueries({ queryKey: ["categories"] });
+      queryClient.invalidateQueries({ queryKey: ["transactions"] });
 
       // TODO: Invalidate summery and transactions
     },

@@ -3,7 +3,7 @@ import CreateTransactionBtn from "@/features/transactions/components/CreateTrasn
 import TransactionsTable from "@/features/transactions/components/TransactionsTable";
 
 export const metadata = {
-  title: "Accounts page",
+  title: "Transactions page",
 };
 
 function TransactionsPage() {

@@ -92,11 +92,11 @@ const app = new Hono()
         .select({
           id: transactions.id,
           date: transactions.date,
-          categoryId: categories.id,
+          categoryId: transactions.categoryId,
           payee: transactions.payee,
           amount: transactions.amount,
           notes: transactions.notes,
-          accountId: accounts.id,
+          accountId: transactions.accountId,
         })
         .from(transactions)
         .innerJoin(accounts, eq(transactions.accountId, accounts.id))

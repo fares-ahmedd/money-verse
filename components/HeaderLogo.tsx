@@ -1,21 +1,24 @@
 import Image from "next/image";
 import Link from "next/link";
 
-function HeaderLogo({ open = false }: { open?: boolean }) {
+function HeaderLogo({ isMenu = false }: { isMenu?: boolean }) {
+  const Component = isMenu ? "div" : Link;
   return (
-    <Link
+    <Component
       href={"/"}
-      className={`items-center ${open ? "flex" : "hidden"}  lg:flex lg:gap-2`}
+      className={`items-center ${isMenu ? "flex" : "hidden"}  lg:flex lg:gap-2`}
     >
-      {!open && <Image src={"/logo.webp"} alt="Logo" width={28} height={28} />}
+      {!isMenu && (
+        <Image src={"/logo.webp"} alt="Logo" width={28} height={28} />
+      )}
       <span
         className={`${
-          open ? "text-purple-600" : "text-white"
+          isMenu ? "text-purple-600" : "text-white"
         } font-bold text-2xl`}
       >
         Moneyverse
       </span>
-    </Link>
+    </Component>
   );
 }
 
