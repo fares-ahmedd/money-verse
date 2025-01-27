@@ -43,7 +43,7 @@ export default function useConfirm(
           <DialogTitle>{title}</DialogTitle>
           <DialogDescription>{message}</DialogDescription>
         </DialogHeader>
-        <DialogFooter className="pt-2">
+        <DialogFooter className="pt-2 gap-1">
           <Button onClick={handleCancel} variant={"outline"}>
             Cancel
           </Button>

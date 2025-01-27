@@ -71,14 +71,6 @@ body {
   }
 }
 
-/*
-This is a common pattern in CSS projects to set the root font size to 62.5% (which is equivalent to 10px in a 16px base font size) and then use rem units to size other elements relative to the root font size.
-
-The reason for this is that it makes it easier to switch between different font sizes in the project, as you can simply change the root font size and everything else will scale accordingly.
-
-For example, if you want to switch to a larger font size, you can simply increase the root font size to 75% (which is equivalent to 12px in a 16px base font size), and all the other elements will be resized accordingly.
-*/
-
 .full-screen {
   height: 100vh;
   height: 100dvh;

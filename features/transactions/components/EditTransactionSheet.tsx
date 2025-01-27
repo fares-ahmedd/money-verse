@@ -19,6 +19,7 @@ import { useGetCategories } from "@/features/categories/api/useGetCategories";
 import { useCreateCategory } from "@/features/categories/api/useCreateCategory";
 import { useGetAccounts } from "@/features/accounts/api/useGetAccounts";
 import { useCreateAccount } from "@/features/accounts/api/useCreateAccount";
+import { convertAmountFromMelinite } from "@/lib/utils";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const formSchema = insertTransactionSchema.omit({
   id: true,
@@ -69,7 +70,7 @@ function EditTransactionSheet() {
     ? {
         accountId: transaction.accountId,
         categoryId: transaction.categoryId,
-        amount: transaction.amount.toString(),
+        amount: convertAmountFromMelinite(transaction.amount).toString(),
         date: transaction.date ? new Date(transaction.date) : new Date(),
         payee: transaction.payee,
         notes: transaction.notes,

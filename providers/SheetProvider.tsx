@@ -13,12 +13,14 @@ function SheetProvider() {
   if (!isMounted) return null;
   return (
     <>
-      <EditTransactionSheet />
       <NewAccountSheet />
       <EditAccountSheet />
+
       <NewCategorySheet />
       <EditCategorySheet />
+
       <NewTransactionSheet />
+      <EditTransactionSheet />
     </>
   );
 }

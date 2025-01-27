@@ -10,7 +10,7 @@ function CreateTransactionBtn() {
   return (
     <Button size={"sm"} onClick={onOpen}>
       <Plus />
-      Add new transaction
+      Add new
     </Button>
   );
 }
