@@ -26,8 +26,8 @@ export const useCreateTransaction = () => {
         title: "✅ Transaction created",
       });
       queryClient.invalidateQueries({ queryKey: ["transactions"] });
+      queryClient.invalidateQueries({ queryKey: ["summary"] });
     },
-    // TODO: Invalidate summery
     onError: (error) => {
       toast({
         title: `❌ ${error.message}`,

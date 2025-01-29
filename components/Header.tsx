@@ -1,7 +1,10 @@
+import { Suspense } from "react";
+import Filters from "./Filters";
 import HeaderLogo from "./HeaderLogo";
 import Navigation from "./Navigation";
 import UserSettings from "./UserSettings";
 import WelcomeMsg from "./WelcomeMsg";
+import { Loader2 } from "lucide-react";
 function Header() {
   return (
     <header className="bg-gr-main-4 px-4 py-8 lg:px-14 pb-36">
@@ -14,6 +17,16 @@ function Header() {
           <UserSettings />
         </div>
         <WelcomeMsg />
+
+        <Suspense
+          fallback={
+            <div className="my-2">
+              <Loader2 className="animate-spin  size-6 text-white" />
+            </div>
+          }
+        >
+          <Filters />
+        </Suspense>
       </div>
     </header>
   );

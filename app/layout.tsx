@@ -8,7 +8,7 @@ import { Toaster } from "@/components/ui/toaster";
 export const metadata: Metadata = {
   title: {
     template: `%s | Moneyverse`,
-    default: `Home | Moneyverse`,
+    default: `Overview | Moneyverse`,
   },
   description: "Finance Made Easy",
   icons: {

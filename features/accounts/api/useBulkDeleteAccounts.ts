@@ -25,7 +25,7 @@ export const useBulkDeleteAccounts = () => {
         title: "Accounts deleted",
       });
       queryClient.invalidateQueries({ queryKey: ["accounts"] });
-      // TODO: Invalidate Summery
+      queryClient.invalidateQueries({ queryKey: ["summary"] });
     },
     onError: () => {
       toast({

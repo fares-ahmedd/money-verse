@@ -1,6 +1,8 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import AccountsTable from "@/features/accounts/components/AccountsTable";
+import AccountTableSkeleton from "@/features/accounts/components/AccountTableSkeleton";
 import CreateAccountBtn from "@/features/accounts/components/CreateAccountBtn";
+import { Suspense } from "react";
 
 export const metadata = {
   title: "Accounts page",
@@ -15,7 +17,9 @@ function AccountsPage() {
           <CreateAccountBtn />
         </CardHeader>
         <CardContent>
-          <AccountsTable />
+          <Suspense fallback={<AccountTableSkeleton />}>
+            <AccountsTable />
+          </Suspense>
         </CardContent>
       </Card>
     </div>

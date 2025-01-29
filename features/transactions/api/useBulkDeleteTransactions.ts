@@ -25,7 +25,7 @@ export const useBulkDeleteTransactions = () => {
         title: "Transactions deleted",
       });
       queryClient.invalidateQueries({ queryKey: ["transactions"] });
-      // TODO: Invalidate Summery
+      queryClient.invalidateQueries({ queryKey: ["summary"] });
     },
     onError: () => {
       toast({

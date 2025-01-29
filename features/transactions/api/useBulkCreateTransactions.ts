@@ -25,7 +25,7 @@ export const useBulkCreateTransactions = () => {
         title: "Transactions created",
       });
       queryClient.invalidateQueries({ queryKey: ["transactions"] });
-      // TODO: Invalidate Summery
+      queryClient.invalidateQueries({ queryKey: ["summary"] });
     },
     onError: () => {
       toast({

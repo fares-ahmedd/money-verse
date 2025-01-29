@@ -25,7 +25,7 @@ export const useBulkDeleteCategories = () => {
         title: "Categories deleted",
       });
       queryClient.invalidateQueries({ queryKey: ["categories"] });
-      // TODO: Invalidate Summery
+      queryClient.invalidateQueries({ queryKey: ["summary"] });
     },
     onError: () => {
       toast({

@@ -31,8 +31,7 @@ export const useEditTransaction = (id?: string) => {
       });
       queryClient.invalidateQueries({ queryKey: ["transaction", { id }] });
       queryClient.invalidateQueries({ queryKey: ["transactions"] });
-
-      // TODO: Invalidate summery
+      queryClient.invalidateQueries({ queryKey: ["summary"] });
     },
     onError: () => {
       toast({

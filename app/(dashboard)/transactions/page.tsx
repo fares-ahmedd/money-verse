@@ -2,6 +2,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import ImportTransactionsBtn from "@/features/transactions/components/ImportTransactionsBtn";
 import CreateTransactionBtn from "@/features/transactions/components/CreateTrasnactionsBtn";
 import TransactionsTable from "@/features/transactions/components/TransactionsTable";
+import { Suspense } from "react";
+import TransactionTableSkeleton from "@/features/transactions/components/TransactionTableSkeleton";
 
 export const metadata = {
   title: "Transactions page",
@@ -21,7 +23,9 @@ function TransactionsPage() {
           </div>
         </CardHeader>
         <CardContent>
-          <TransactionsTable />
+          <Suspense fallback={<TransactionTableSkeleton />}>
+            <TransactionsTable />
+          </Suspense>
         </CardContent>
       </Card>
     </div>
