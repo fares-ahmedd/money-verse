@@ -56,11 +56,11 @@ npm run build
 ## App User Experience 
 (note) If your internet speed is slow, please be patient as the GIF may take some time to download
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/09a7a46a-d62b-4f17-bbe3-6f1b98f347d4"  alt="App user experience">
+  <img src="https://github.com/user-attachments/assets/d227966c-838d-4056-8f52-4875b757126f"  alt="App user experience">
 </div>
 
 ---
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/8dedaf30-180a-46cc-b1d1-69cd6acc62d0"  alt="App user experience">
+  <img src="https://github.com/user-attachments/assets/ef7d4d4d-7f1e-4e7e-9507-17f59ac49209"  alt="App user experience">
 </div>
