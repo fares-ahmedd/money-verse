@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<a href="https://money-verse-web.vercel.app/">
+<div align="center">
+  <img width="80" height="80" alt="Moneyverse logo" src="https://github.com/user-attachments/assets/e33a9c42-5b24-4a09-8f4b-0bcb1361c48c"/>
+</div>
+</a>
 
-## Getting Started
+<h1  align="center" style="text-decoration: none;">Moneyverse</h1>
+<p align="center"> Moneyverse serves as a powerful tool for financial advisors, offering a comprehensive platform to monitor client transactions and generate detailed financial reports. Its intuitive interface facilitates meaningful client discussions around spending patterns and financial goals
+<a href="https://money-verse-web.vercel.app/">&nbsp;live demo</a> , (If you see an error message or run into an issue, please <a href="https://github.com/fares-ahmedd/money-verse/issues">create bug report</a>. thank you)</p>
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+<a href="https://money-verse-web.vercel.app/">
+<div align="center">
+<img alt="Moneyverse app" width="950" src="https://github.com/user-attachments/assets/808575f8-7dee-47d6-9f3a-9d5510bad55f"/>
+</div>
+<div align="center" >
+<img alt="Moneyverse app" width="950" src="https://github.com/user-attachments/assets/eb6a2ceb-350e-4dfb-9f7d-b56ff604e7d4"/>
+</div>
+<div align="center" >
+<img alt="Moneyverse app" width="950" src="https://github.com/user-attachments/assets/e52b26b0-c44b-44d5-8276-63c33b1a3d71"/>
+</div>
+<div align="center" >
+<img alt="Moneyverse app" width="950" src="https://github.com/user-attachments/assets/296b1dc2-91f4-4090-a0b4-765d54eea7da"/>
+</div>
+</a>
+
+---
+
+## Primary technologies employed
+
+ <img alt="NextJs Technique" src="https://img.shields.io/badge/next%20js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white"/> &nbsp;&nbsp; <img alt="Tailwind Technique" src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white"/>  &nbsp;&nbsp; <img alt="Drizzle Technique" src="https://img.shields.io/badge/drizzle-C5F74F?style=for-the-badge&logo=drizzle&logoColor=black"/> &nbsp;&nbsp; <img alt="Hono Technique" src="https://img.shields.io/badge/hono-E36002?style=for-the-badge&logo=hono&logoColor=white"/> &nbsp;&nbsp; <img alt="Typescript Technique" src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white"/> &nbsp;&nbsp; <img alt="React Query Technique" src="https://img.shields.io/badge/React_Query-FF4154?style=for-the-badge&logo=ReactQuery&logoColor=white"/> &nbsp;&nbsp; <img alt="Shadcn Technique" src="https://img.shields.io/badge/shadcn%2Fui-000000?style=for-the-badge&logo=shadcnui&logoColor=white"/> &nbsp;&nbsp; <img alt="Mysql Technique" src="https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white"/>
+
+
+## Building and running on localhost
+
+First install dependencies:
+
+```sh
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+To run in hot module reloading mode:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```sh
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To create a production build:
 
-## Learn More
+```sh
+npm run build
+```
 
-To learn more about Next.js, take a look at the following resources:
+## App User Experience 
+(note) If your internet speed is slow, please be patient as the GIF may take some time to download
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/d227966c-838d-4056-8f52-4875b757126f"  alt="App user experience">
+</div>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/ef7d4d4d-7f1e-4e7e-9507-17f59ac49209"  alt="App user experience">
+</div>
