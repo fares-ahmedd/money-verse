@@ -12,8 +12,7 @@ const config: Config = {
       backgroundImage: {
         "gr-main-1": "linear-gradient(180deg, #9333ea, #4f46e5)",
         "gr-main-2": "linear-gradient(45deg, #9333ea, #ec4899)",
-        "gr-main-3": "radial-gradient(circle, #9333ea, #3b82f6)",
-        "gr-main-4": "linear-gradient(45deg, #9333ea, #c026d3, #6366f1)",
+        "gr-main-3": "linear-gradient(45deg, #9333ea, #c026d3, #6366f1)",
       },
       colors: {
         background: "hsl(var(--background))",

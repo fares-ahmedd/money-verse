@@ -12,6 +12,7 @@ type Props = {
 function CategoryColumn({ category, categoryId, id }: Props) {
   const { onOpen: onOpenCategory } = useOpenCategory();
   const { onOpen: OnOpenTransaction } = useOpenTransaction();
+
   const onClick = () => {
     if (categoryId) {
       onOpenCategory(categoryId);
@@ -19,6 +20,7 @@ function CategoryColumn({ category, categoryId, id }: Props) {
       OnOpenTransaction(id);
     }
   };
+
   return (
     <span
       className={cn(

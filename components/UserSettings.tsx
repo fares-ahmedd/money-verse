@@ -8,7 +8,7 @@ function UserSettings() {
           afterSwitchSessionUrl="/"
           appearance={{
             elements: {
-              avatarBox: "size-12 border-2 border-white  ", // Styles the avatar (image container)
+              avatarBox: "size-12 border-2 border-white",
             },
           }}
         />

@@ -18,8 +18,8 @@ import {
 function DateFilter() {
   const router = useRouter();
   const pathname = usePathname();
-
   const params = useSearchParams();
+
   const accountId = params.get("accountId");
   const from = params.get("from") || "";
   const to = params.get("to") || "";
@@ -35,8 +35,12 @@ function DateFilter() {
 
   const pushToUrl = (dateRange: DateRange | undefined) => {
     const query = {
-      from: format(dateRange?.from || defaultFrom, "yyyy-MM-dd"),
-      to: format(dateRange?.to || defaultTo, "yyyy-MM-dd"),
+      from: dateRange
+        ? format(dateRange?.from || defaultFrom, "yyyy-MM-dd")
+        : undefined,
+      to: dateRange
+        ? format(dateRange?.to || defaultTo, "yyyy-MM-dd")
+        : undefined,
       accountId,
     };
 
@@ -59,18 +63,16 @@ function DateFilter() {
     <Popover>
       <PopoverTrigger asChild>
         <Button
-          disabled={false}
           size={"sm"}
           variant={"outline"}
-          className="lg:w-auto w-full h-9 rounded-md px-3 font-normal bg-white/10 hover:bg-white/20 hover:text-white border-none focus:ring-offset-0 focus:ring-transparent outline-none text-white focus:bg-white/30 transition"
+          className="lg:w-auto w-full h-9 rounded-md px-3 font-normal bg-white/10 hover:bg-white/20 hover:text-white border-none focus:ring-offset-0 focus:ring-transparent  text-white focus:bg-white/30 transition"
         >
           <span>{formatDataRange(paramsState)}</span>
           <ChevronDown className="ml-2 size-4 opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="lg:w-auto w-full p-0" align="start">
+      <PopoverContent className="lg:w-auto w-full p-0" align="center">
         <Calendar
-          disabled={false}
           initialFocus
           mode="range"
           defaultMonth={date?.from}

@@ -36,9 +36,8 @@ function EditAccountSheet() {
       }
     : { name: "" };
   const onSubmit = (values: FormValues) => {
-    if (!values?.name?.trim()) return;
     editAccount(values, {
-      onSuccess: () => {
+      onSettled: () => {
         onClose();
       },
     });

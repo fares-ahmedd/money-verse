@@ -38,7 +38,7 @@ function Navigation() {
             <MenuIcon className="block !size-8" />
           </Button>
         </SheetTrigger>
-        <SheetContent side={"left"} className="px-2">
+        <SheetContent className="w-full" side={"left"}>
           <div className="mx-4 w-fit">
             <HeaderLogo isMenu />
           </div>

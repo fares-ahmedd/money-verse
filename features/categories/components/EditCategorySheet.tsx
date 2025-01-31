@@ -38,9 +38,8 @@ function EditCategorySheet() {
       }
     : { name: "" };
   const onSubmit = (values: FormValues) => {
-    if (!values?.name?.trim()) return;
     editCategory(values, {
-      onSuccess: () => {
+      onSettled: () => {
         onClose();
       },
     });

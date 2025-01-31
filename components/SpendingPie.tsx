@@ -30,11 +30,13 @@ function SpendingPie() {
     setChartType(type);
   };
   return (
-    <Card className="border-none drop-shadow-sm">
+    <Card className=" drop-shadow-sm">
       <CardHeader className="flex space-y-2 lg:space-y-0 lg:flex-row lg:items-center justify-between">
-        <CardTitle className="line-clamp-1">Categories</CardTitle>
+        <CardTitle className="line-clamp-1 text-base lg:text-lg">
+          Categories
+        </CardTitle>
         <Select defaultValue={chartType} onValueChange={onTypeChange}>
-          <SelectTrigger className="lg:w-auto h-9 rounded-md px-3">
+          <SelectTrigger className="lg:w-auto h-9 rounded-md px-3 focus:ring-offset-0 focus:ring-transparent">
             <SelectValue placeholder="Chart type" />
           </SelectTrigger>
           <SelectContent>

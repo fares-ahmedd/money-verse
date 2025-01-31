@@ -4,19 +4,18 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { insertAccountSchema } from "@/db/schema";
 import {
   Form,
   FormControl,
   FormField,
   FormItem,
   FormLabel,
+  FormMessage,
 } from "@/components/ui/form";
 
-const formSchema = insertAccountSchema.pick({
-  name: true,
+const formSchema = z.object({
+  name: z.string().trim().min(1, "Name is required"),
 });
-
 type FormValues = z.input<typeof formSchema>;
 
 type Props = {
@@ -38,6 +37,7 @@ function AccountForm({
     resolver: zodResolver(formSchema),
     defaultValues: defaultValues,
   });
+
   const handleSubmit = (values: FormValues) => {
     onSubmit(values);
   };
@@ -57,7 +57,7 @@ function AccountForm({
           control={form.control}
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Name</FormLabel>
+              <FormLabel className="text-black">Name</FormLabel>
               <FormControl>
                 <Input
                   disabled={disabled}
@@ -65,6 +65,7 @@ function AccountForm({
                   {...field}
                 />
               </FormControl>
+              <FormMessage />
             </FormItem>
           )}
         />

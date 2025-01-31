@@ -27,7 +27,7 @@ export const useCreateCategory = () => {
     },
     onError: (error) => {
       toast({
-        title: `❌ ${error.message}`,
+        title: `${error.message}`,
         variant: "destructive",
       });
     },

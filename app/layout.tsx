@@ -10,7 +10,8 @@ export const metadata: Metadata = {
     template: `%s | Moneyverse`,
     default: `Overview | Moneyverse`,
   },
-  description: "Finance Made Easy",
+  description:
+    "Moneyverse, is designed to manage and analyze financial transactions efficiently.",
   icons: {
     icon: [
       {
@@ -18,6 +19,14 @@ export const metadata: Metadata = {
         type: "image/webp",
       },
     ],
+  },
+  openGraph: {
+    title: "Moneyverse",
+    description:
+      "Moneyverse, is designed to manage and analyze financial transactions efficiently.",
+    images: ["/preview.webp"],
+    url: "https://money-verse-web.vercel.app/",
+    type: "website",
   },
 };
 

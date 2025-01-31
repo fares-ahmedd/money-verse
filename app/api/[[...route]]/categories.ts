@@ -72,7 +72,8 @@ const app = new Hono()
       if (!auth?.userId) {
         return c.json({ error: "unauthorized" }, 401);
       }
-      const existUser = await db
+
+      const existCategory = await db
         .select()
         .from(categories)
         .where(
@@ -82,9 +83,10 @@ const app = new Hono()
           )
         );
 
-      if (existUser.length > 0) {
-        return c.json({ error: "Account already exists" }, 400);
+      if (existCategory.length > 0) {
+        return c.json({ error: "Category Already Exist" }, 400);
       }
+
       const data = await db
         .insert(categories)
         .values({
@@ -157,7 +159,7 @@ const app = new Hono()
         return c.json({ error: "Unauthorized" }, 401);
       }
 
-      const existUser = await db
+      const existCategory = await db
         .select()
         .from(categories)
         .where(
@@ -167,8 +169,8 @@ const app = new Hono()
           )
         );
 
-      if (existUser.length > 0) {
-        return c.json({ error: "Username account already exists" }, 400);
+      if (existCategory.length > 0) {
+        return c.json({ error: "Category already exist" }, 400);
       }
       const [data] = await db
         .update(categories)

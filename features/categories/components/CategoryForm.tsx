@@ -10,11 +10,11 @@ import {
   FormField,
   FormItem,
   FormLabel,
+  FormMessage,
 } from "@/components/ui/form";
-import { insertCategorySchema } from "@/db/schema";
 
-const formSchema = insertCategorySchema.pick({
-  name: true,
+const formSchema = z.object({
+  name: z.string().trim().min(1, "Name is required"),
 });
 
 type FormValues = z.input<typeof formSchema>;
@@ -57,7 +57,7 @@ function CategoryForm({
           control={form.control}
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Name</FormLabel>
+              <FormLabel className="text-black">Name</FormLabel>
               <FormControl>
                 <Input
                   disabled={disabled}
@@ -65,6 +65,7 @@ function CategoryForm({
                   {...field}
                 />
               </FormControl>
+              <FormMessage />
             </FormItem>
           )}
         />

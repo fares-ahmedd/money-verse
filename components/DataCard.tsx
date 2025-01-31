@@ -9,6 +9,7 @@ import {
   CardTitle,
 } from "./ui/card";
 import { CountUp } from "@/components/CountUp";
+
 const boxVariant = cva("rounded-md p-3", {
   variants: {
     variant: {

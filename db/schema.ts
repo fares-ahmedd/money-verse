@@ -37,6 +37,10 @@ export const transactions = pgTable("transactions", {
   }),
 });
 
+export const insertTransactionSchema = createInsertSchema(transactions, {
+  date: z.coerce.date(),
+});
+
 export const accountRelations = relations(accounts, ({ many }) => ({
   transactions: many(transactions),
 }));
@@ -55,7 +59,3 @@ export const transactionsRelations = relations(transactions, ({ one }) => ({
     references: [categories.id],
   }),
 }));
-
-export const insertTransactionSchema = createInsertSchema(transactions, {
-  date: z.coerce.date(),
-});

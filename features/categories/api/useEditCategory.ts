@@ -37,7 +37,6 @@ export const useEditCategory = (id?: string) => {
     onError: (error) => {
       toast({
         title: `${error.message}`,
-        variant: "destructive",
       });
     },
   });

@@ -33,12 +33,10 @@ export const useEditAccount = (id?: string) => {
       queryClient.invalidateQueries({ queryKey: ["accounts"] });
       queryClient.invalidateQueries({ queryKey: ["transactions"] });
       queryClient.invalidateQueries({ queryKey: ["summary"] });
-
     },
     onError: (error) => {
       toast({
         title: `${error.message}`,
-        variant: "destructive",
       });
     },
   });

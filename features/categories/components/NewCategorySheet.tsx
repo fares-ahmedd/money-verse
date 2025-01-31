@@ -21,7 +21,6 @@ function NewCategorySheet() {
   const { isOpen, onClose } = useNewCategory();
   const { mutate, isPending: isCreating } = useCreateCategory();
   const onSubmit = (values: FormValues) => {
-    if (!values.name.trim()) return;
     mutate(values, {
       onSuccess: () => {
         onClose();

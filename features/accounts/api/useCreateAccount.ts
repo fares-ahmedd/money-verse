@@ -27,7 +27,7 @@ export const useCreateAccount = () => {
     },
     onError: (error) => {
       toast({
-        title: `❌ ${error.message}`,
+        title: `${error.message}`,
         variant: "destructive",
       });
     },

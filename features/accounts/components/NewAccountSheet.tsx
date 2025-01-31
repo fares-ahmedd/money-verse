@@ -20,14 +20,15 @@ export type FormValues = z.input<typeof formSchema>;
 function NewAccountSheet() {
   const { isOpen, onClose } = useNewAccount();
   const { mutate, isPending: isCreating } = useCreateAccount();
+
   const onSubmit = (values: FormValues) => {
-    if (!values.name.trim()) return;
     mutate(values, {
       onSuccess: () => {
         onClose();
       },
     });
   };
+
   return (
     <Sheet open={isOpen} onOpenChange={onClose}>
       <SheetContent className="space-y-4">
