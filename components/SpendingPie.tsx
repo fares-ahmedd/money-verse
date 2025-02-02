@@ -13,6 +13,7 @@ import PieVariant from "./PieVariant";
 import RadarVariant from "./RadarVariant";
 import RadialVariant from "./RadialVariant";
 import { useGetSummary } from "@/features/summary/api/useGetSummary";
+import { usePaywall } from "@/features/subscriptions/hooks/usePaywall";
 
 type ChartType = "pie" | "radar" | "radial";
 
@@ -24,9 +25,14 @@ const chartComponents = {
 
 function SpendingPie() {
   const [chartType, setChartType] = useState<ChartType>("pie");
+  const { shouldBlock, triggerPaywall } = usePaywall();
 
   const ChartComponent = chartComponents[chartType];
   const onTypeChange = (type: ChartType) => {
+    if (type !== "pie" && shouldBlock) {
+      triggerPaywall();
+      return;
+    }
     setChartType(type);
   };
   return (

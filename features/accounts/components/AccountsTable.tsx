@@ -12,9 +12,9 @@ function AccountsTable() {
 
   const isDisabled = isLoading || isPending;
 
-  if (isLoading) {
-    return <AccountTableSkeleton />;
-  }
+  // if (isLoading) {
+  return <AccountTableSkeleton />;
+  // }
 
   return (
     <DataTable

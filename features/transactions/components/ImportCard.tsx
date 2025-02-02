@@ -29,7 +29,7 @@ function ImportCard({ data, onCancel, onSubmit, isOpen }: Props) {
   const [selectedColumns, setSelectedColumns] = useState<SelectColumnState>({});
 
   const headers = data[0];
-  const body = data.slice(1);
+  const body = data?.slice(1);
 
   const onTableHeadSelectChange = (
     columnIndex: number,
@@ -101,10 +101,7 @@ function ImportCard({ data, onCancel, onSubmit, isOpen }: Props) {
   return (
     <Sheet open={isOpen} onOpenChange={onCancel}>
       <SheetContent side={"bottom"} className="h-full">
-        <SheetHeader
-          className="flex justify-between items-center flex-col md:flex-row gap-1 "
-          style={{ marginBlock: "0.3rem" }}
-        >
+        <SheetHeader className="flex justify-between items-center flex-col md:flex-row gap-1 mx-[0.3rem]">
           <SheetTitle className="line-clamp-1">Import Transaction</SheetTitle>
           <div className="flex items-center gap-2">
             <Button size={"sm"} variant={"destructive"} onClick={onCancel}>

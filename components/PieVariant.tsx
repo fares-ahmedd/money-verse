@@ -37,14 +37,14 @@ function PieVariant({ data }: Props) {
                   >
                     <span
                       className="size-2 rounded-full"
-                      style={{ backgroundColor: entry.color }}
+                      style={{ backgroundColor: entry?.color }}
                     />
                     <div className="space-x-1">
                       <span className="text-sm text-muted-foreground">
-                        {entry.value}
+                        {entry?.value}
                       </span>
                       <span className="text-sm">
-                        {formatPercentage(entry.payload.percent * 100)}
+                        {formatPercentage(entry?.payload?.percent * 100)}
                       </span>
                     </div>
                   </li>

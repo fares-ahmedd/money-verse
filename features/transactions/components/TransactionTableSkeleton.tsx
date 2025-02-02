@@ -4,18 +4,9 @@ import React from "react";
 function TransactionTableSkeleton() {
   return (
     <div className="py-4 space-y-2">
-      <div
-        className="skeleton "
-        style={{ height: "30px", maxWidth: "384px" }}
-      ></div>
-      <div
-        style={{ height: "150px", display: "grid", placeItems: "center" }}
-        className="border h-[150px]"
-      >
-        <Loader2
-          className="animate-spin "
-          style={{ height: "30px", width: "30px" }}
-        />
+      <div className="skeleton h-[30px] max-w-[384px]"></div>
+      <div className="border h-[150px] grid place-items-center">
+        <Loader2 className="animate-spin size-[30px]" />
       </div>
     </div>
   );

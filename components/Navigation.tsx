@@ -14,7 +14,9 @@ const routes = [
   { href: "/transactions", label: "Transactions" },
   { href: "/accounts", label: "Accounts" },
   { href: "/categories", label: "Categories" },
+  { href: "/settings", label: "Settings" },
 ];
+
 function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();

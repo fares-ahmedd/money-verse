@@ -23,10 +23,9 @@ function TableHeadSelect({ columnIndex, onChange, selectedColumns }: Props) {
       }
     >
       <SelectTrigger
-        className={
-          "focus:ring-offset-0 focus:ring-transparent outline-none border-none bg-transparent capitalize"
-        }
-        style={{ color: currentSelection ? "#2a2ae3" : "" }}
+        className={`focus:ring-offset-0 focus:ring-transparent outline-none border-none bg-transparent capitalize ${
+          currentSelection ? "text-[#2a2ae3]" : ""
+        }`}
       >
         <SelectValue placeholder="Skip" />
       </SelectTrigger>

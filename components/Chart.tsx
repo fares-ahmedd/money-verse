@@ -19,6 +19,7 @@ import { useState } from "react";
 import BarVariant from "./BarVariant";
 import AreaVariant from "./AreaVariant";
 import { useGetSummary } from "@/features/summary/api/useGetSummary";
+import { usePaywall } from "@/features/subscriptions/hooks/usePaywall";
 
 type ChartType = "area" | "line" | "bar";
 
@@ -30,9 +31,14 @@ const chartComponents = {
 
 function Chart() {
   const [chartType, setChartType] = useState<ChartType>("area");
+  const { shouldBlock, triggerPaywall } = usePaywall();
 
   const ChartComponent = chartComponents[chartType];
   const onTypeChange = (type: ChartType) => {
+    if (type !== "area" && shouldBlock) {
+      triggerPaywall();
+      return;
+    }
     setChartType(type);
   };
   return (

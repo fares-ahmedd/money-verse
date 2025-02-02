@@ -21,10 +21,7 @@ function ImportTable({
   selectedColumns,
 }: Props) {
   return (
-    <div
-      className="rounded-md border"
-      style={{ maxHeight: "500px", overflow: "auto" }}
-    >
+    <div className="rounded-md border max-h-[500px] overflow-auto">
       <Table>
         <TableHeader className="bg-muted">
           <TableRow>

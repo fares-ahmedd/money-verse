@@ -10,6 +10,7 @@ import { transactions } from "@/db/schema";
 import useSelectAccount from "@/features/accounts/hooks/useSelectAccount";
 import { toast } from "@/hooks/use-toast";
 import { useBulkCreateTransactions } from "../api/useBulkCreateTransactions";
+import { usePaywall } from "@/features/subscriptions/hooks/usePaywall";
 
 const INITIAL_IMPORT_RESULT = {
   data: [],
@@ -23,6 +24,7 @@ function ImportTransactionsBtn() {
   const { CSVReader } = useCSVReader();
   const [AccountDialog, confirm] = useSelectAccount();
   const { mutate: createTransactions } = useBulkCreateTransactions();
+  const { shouldBlock, triggerPaywall } = usePaywall();
 
   const onUpload = (results: typeof INITIAL_IMPORT_RESULT) => {
     setImportResults(results);
@@ -66,6 +68,15 @@ function ImportTransactionsBtn() {
         onSubmit={handleSubmit}
         isOpen={isOpen}
       />
+    );
+  }
+
+  if (shouldBlock) {
+    return (
+      <Button size={"sm"} className="w-full lg:w-auto" onClick={triggerPaywall}>
+        <Upload className="size-4" />
+        Import
+      </Button>
     );
   }
 
